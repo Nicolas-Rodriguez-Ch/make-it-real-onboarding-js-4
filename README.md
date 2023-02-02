@@ -14,4 +14,4 @@ Algunos metodos de los arregñps de JS y arreglar bugs de otro código.
 
 Autores
 
-Nicolás Rodríguez, Sebastian Henao.
+Nicolás Rodríguez, Sebastian Alavarez Henao.
