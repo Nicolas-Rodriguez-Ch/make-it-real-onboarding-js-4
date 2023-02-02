@@ -2,11 +2,7 @@
 
 // Devuelve el valor de la propiedad 'b' del objeto 'a' dentro del objeto original si existe, si no, devuelve undefined.
 
-function myFunction(obj) {
-    if (obj.a) {
-        return obj.a.b;
-    }
-}
+const myFunction = (obj) => (obj.a) ? obj.a.b : undefined;
 
 console.log(myFunction({a:1}));
 console.log(myFunction({a:{b:{c:3}}}));
