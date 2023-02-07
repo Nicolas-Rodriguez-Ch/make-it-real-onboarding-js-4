@@ -2,7 +2,18 @@
 
 // Devuelve el valor de la propiedad 'b' del objeto 'a' dentro del objeto original si existe, si no, devuelve undefined.
 
-const myFunction = (obj) => (obj.a) ? obj.a.b : undefined;
+const myFunction = (obj) => {
+  if (!Object.keys(obj).length) return undefined;
+  const checker = (obj) => {
+    if (obj['a'] && obj['a'].b) return obj['a'].b;
+    for (let i in obj) {
+      if (!(obj[i] === typeof 'object')) continue;
+      if (checker(obj[i])) return checker(obj[i]);
+      continue;
+    }
+  };
+  return checker(obj);
+};;
 
 console.log(myFunction({a:1}));
 console.log(myFunction({a:{b:{c:3}}}));
